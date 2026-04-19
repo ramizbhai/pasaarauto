@@ -1,4 +1,4 @@
-import { PUBLIC_APPWRITE_ENDPOINT, PUBLIC_APPWRITE_PROJECT_ID } from '$env/static/public';
+import { PUBLIC_APPWRITE_ENDPOINT, PUBLIC_APPWRITE_PROJECT_ID } from '$lib/env.js';
 
 /**
  * Generates an optimized image URL using Appwrite's Transformation API

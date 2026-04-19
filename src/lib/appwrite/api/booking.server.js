@@ -1,13 +1,19 @@
 import { Client, Databases, ID, Query } from 'node-appwrite';
-import { PUBLIC_APPWRITE_ENDPOINT, PUBLIC_APPWRITE_PROJECT_ID } from '$env/static/public';
-import { APPWRITE_API_KEY } from '$env/static/private';
+import { PUBLIC_APPWRITE_ENDPOINT, PUBLIC_APPWRITE_PROJECT_ID, APPWRITE_API_KEY } from '$lib/env.js';
 import { config } from '../config';
 
 // Server-side client with API key bypass
-const serverClient = new Client()
-    .setEndpoint(PUBLIC_APPWRITE_ENDPOINT)
-    .setProject(PUBLIC_APPWRITE_PROJECT_ID)
-    .setKey(APPWRITE_API_KEY);
+const serverClient = new Client();
+
+if (PUBLIC_APPWRITE_ENDPOINT) {
+    serverClient.setEndpoint(PUBLIC_APPWRITE_ENDPOINT);
+}
+if (PUBLIC_APPWRITE_PROJECT_ID) {
+    serverClient.setProject(PUBLIC_APPWRITE_PROJECT_ID);
+}
+if (APPWRITE_API_KEY) {
+    serverClient.setKey(APPWRITE_API_KEY);
+}
 
 const databases = new Databases(serverClient);
 
