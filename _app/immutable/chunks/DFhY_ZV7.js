@@ -1,0 +1,1 @@
+var e={BOOKING_START:`booking_initiated`,BOOKING_COMPLETE:`booking_completed`,CALCULATOR_INTERACTION:`calculator_used`,GALLERY_MODAL_OPEN:`gallery_viewed`};function t(e,t={}){console.log(`[Analytics] Event: ${e}`,t)}export{t as n,e as t};
